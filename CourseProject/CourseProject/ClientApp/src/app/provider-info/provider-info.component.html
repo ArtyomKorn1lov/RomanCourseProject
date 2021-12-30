@@ -1,0 +1,39 @@
+<div *ngIf="user.status == 'manager' || user.status == 'admin'" class="page-selection">
+    <div class="head-block">
+        <h2>Подробнее о поставщике</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" [routerLink]="['/provider-list']">
+            <h1>Назад</h1>
+        </button>
+        <button class="second-variation-bar" [routerLink]="['/edit-provider']">
+            <h1>Редактировать</h1> 
+        </button>
+    </div>
+    <div class="frame-form">
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Наименование поставщика:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{provider.name}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Адрес поставщика:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{provider.address}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Номер телефона поставщика:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{provider.phone}}</h1>
+            </div>
+        </div>
+    </div>
+</div>

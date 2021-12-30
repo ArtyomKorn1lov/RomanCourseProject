@@ -1,0 +1,62 @@
+<div *ngIf="user.status == 'manager' || user.status == 'admin'" class="page-selection">
+    <div class="head-block">
+        <h2>Список поставщиков</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" [routerLink]="['/orders']">
+            <h1>Назад</h1>
+        </button>
+        <button class="second-variation-bar" [routerLink]="['/create-provider']">
+            <h1>Добавить поставщика</h1> 
+        </button>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" (click)="reloadList()">
+            <h1>Перезагрузить</h1>
+        </button>
+        <input [(ngModel)]="search" class="auth-input" type="text" placeholder="Найти по названию">
+        <button class="second-variation-bar" (click)="getProvidersByName()">
+            <h1>Найти</h1> 
+        </button>
+    </div>
+    <div class="object-location">
+        <div class="object">
+            <div class="element">
+                <p>Id</p>
+            </div>
+            <div class="element">
+                <p>Наименование</p>
+            </div>
+            <div class="element">
+                <p>Адрес</p>
+            </div>
+            <div class="element">
+                <p>Телефон</p>
+            </div>
+            <div class="element">
+                <p>Навигация</p>
+            </div>
+        </div>
+        <div class="object-list" *ngFor="let provider of providers">
+            <div class="object">
+                <div class="element">
+                    <p>{{provider.id}}</p>
+                </div>
+                <div class="element">
+                    <p>{{provider.name}}</p>
+                </div>
+                <div class="element">
+                    <p>{{provider.address}}</p>
+                </div>
+                <div class="element">
+                    <p>{{provider.phone}}</p>
+                </div>
+                <div class="element-button">
+                    <button class="object-button" [routerLink]="['/provider-info']" (click)="pushDataInService(provider.id)">
+                        <h1>Подробнее</h1>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

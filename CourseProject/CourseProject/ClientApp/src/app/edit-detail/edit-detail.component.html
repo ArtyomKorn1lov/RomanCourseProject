@@ -1,0 +1,50 @@
+<div *ngIf="user.status == 'manager' || user.status == 'admin'" class="page-selection">
+    <div class="head-block">
+        <h2>Редактировать деталь</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" [routerLink]="['/detail-info']">
+            <h1>Назад</h1>
+        </button>
+        <button class="fisrt-variation-bar" (click)="deleteDetail(detail.id)">
+            <h1>Удалить</h1>
+        </button>
+        <button class="second-variation-bar" (click)="UpdateDetail()">
+            <h1>Редактировать</h1> 
+        </button>
+    </div>
+    <div class="frame-form">
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Название детали:</h1>
+            </div>
+            <div class="form-block">
+                <input [(ngModel)]="detail.name" class="auth-input" type="text" placeholder="Введите название" maxlength="100">
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Артикул детали:</h1>
+            </div>
+            <div class="form-block">
+                <input [(ngModel)]="detail.articleNumber" class="auth-input" type="number" placeholder="Введите артикул">
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Цена детали:</h1>
+            </div>
+            <div class="form-block">
+                <input [(ngModel)]="detail.price" class="auth-input" type="number" placeholder="Введите цену">
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Краткое описание детали:</h1>
+            </div>
+            <div class="form-block">
+                <textarea maxlength="300" [(ngModel)]="detail.note" class="form-textarea" placeholder="Краткое описание детали (300 символов)"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

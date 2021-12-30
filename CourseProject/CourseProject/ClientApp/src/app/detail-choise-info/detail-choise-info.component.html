@@ -1,0 +1,47 @@
+<div *ngIf="user.id == 1" class="page-selection">
+    <div class="head-block">
+        <h2>Выбрать данную деталь?</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" [routerLink]="['/detail-choise']">
+            <h1>К списку</h1>
+        </button>
+        <button class="second-variation-bar" (click)="choiseDetail(detail.id)">
+            <h1>Выбрать</h1> 
+        </button>
+    </div>
+    <div class="frame-form">
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Название детали:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{detail.name}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Артикул детали:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{detail.articleNumber}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Цена детали:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{detail.price}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Краткое описание детали:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{detail.note}}</h1>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div *ngIf="user.status == 'admin'" class="page-selection">
+    <div class="head-block">
+        <h2>Список пользователей</h2>
+    </div>
+    <div class="controll-button-block">
+        <div class="object"></div>
+        <button class="second-variation-bar" [routerLink]="['/user-create']">
+            <h1>Добавить пользователя</h1> 
+        </button>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" (click)="reloadList()">
+            <h1>Перезагрузить</h1>
+        </button>
+        <input [(ngModel)]="search" class="auth-input" type="text" placeholder="Найти по названию">
+        <button class="second-variation-bar" (click)="getUsersByName()">
+            <h1>Найти</h1> 
+        </button>
+    </div>
+    <div class="object-location">
+        <div class="object">
+            <div class="element">
+                <p>Id</p>
+            </div>
+            <div class="element">
+                <p>Имя пользователя</p>
+            </div>
+            <div class="element">
+                <p>Логин</p>
+            </div>
+            <div class="element">
+                <p>Статус</p>
+            </div>
+            <div class="element">
+                <p>Навигация</p>
+            </div>
+        </div>
+        <div class="object-list" *ngFor="let user of users">
+            <div class="object">
+                <div class="element">
+                    <p>{{user.id}}</p>
+                </div>
+                <div class="element">
+                    <p>{{user.name}}</p>
+                </div>
+                <div class="element">
+                    <p>{{user.login}}</p>
+                </div>
+                <div class="element">
+                    <p>{{user.status}}</p>
+                </div>
+                <div class="element-button">
+                    <button class="object-button" [routerLink]="['/user-info']" (click)="pushDataInService(user.id)">
+                        <h1>Подробнее</h1>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

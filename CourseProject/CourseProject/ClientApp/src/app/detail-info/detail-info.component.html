@@ -1,0 +1,47 @@
+<div *ngIf="user.status == 'manager' || user.status == 'admin'" class="page-selection">
+    <div class="head-block">
+        <h2>Подробнее о детали</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" [routerLink]="['/detail-list']">
+            <h1>Назад</h1>
+        </button>
+        <button class="second-variation-bar" [routerLink]="['/edit-detail']">
+            <h1>Редактировать</h1> 
+        </button>
+    </div>
+    <div class="frame-form">
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Название детали:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{detail.name}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Артикул детали:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{detail.articleNumber}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Цена детали:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{detail.price}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Краткое описание детали:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{detail.note}}</h1>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div *ngIf="user.status == 'admin'" class="page-selection">
+    <div class="head-block">
+        <h2>Подробнее о пользователе</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" [routerLink]="['/user-list']">
+            <h1>Назад</h1>
+        </button>
+        <button class="second-variation-bar" [routerLink]="['/user-edit']">
+            <h1>Редактировать</h1> 
+        </button>
+    </div>
+    <div class="frame-form">
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Имя пользователя:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{currentUser.name}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Логин:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{currentUser.login}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Пароль:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{currentUser.password}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Статус:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{currentUser.status}}</h1>
+            </div>
+        </div>
+    </div>
+</div>

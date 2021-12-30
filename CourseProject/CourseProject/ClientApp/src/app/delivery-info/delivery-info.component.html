@@ -1,0 +1,55 @@
+<div *ngIf="user.id == 1" class="page-selection">
+    <div class="head-block">
+        <h2>Подробнее о поставке</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" [routerLink]="['/delivery-list']">
+            <h1>Назад</h1>
+        </button>
+        <button class="second-variation-bar" [routerLink]="['/edit-delivery']">
+            <h1>Редактировать</h1> 
+        </button>
+    </div>
+    <div class="frame-form">
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Наименование поставщика:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{provider.name}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Наименование детали:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{detail.name}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Количество товара:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{delivery.count}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Дата создания:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{delivery.date}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Стоимость заказа:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{delivery.price}}</h1>
+            </div>
+        </div>
+    </div>
+</div>

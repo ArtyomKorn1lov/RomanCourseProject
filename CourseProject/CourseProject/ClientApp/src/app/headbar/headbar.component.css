@@ -1,0 +1,19 @@
+.head-block {
+    background: #444444;
+    border: 10px solid rgb(48, 48, 48);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px;
+}
+
+.hyp-bar {
+    display: flex;
+    align-items: center;
+}
+
+.selector-hrev+.selector-hrev {
+    margin-left: 25px;
+}

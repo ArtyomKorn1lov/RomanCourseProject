@@ -1,0 +1,51 @@
+<div *ngIf="user.status == 'admin'" class="page-selection">
+    <div class="head-block">
+        <h2>Добавить нового пользователя</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" [routerLink]="['/user-list']">
+            <h1>Назад</h1>
+        </button>
+        <button class="second-variation-bar" (click)="createNewUser()">
+            <h1>Добавить</h1> 
+        </button>
+    </div>
+    <div class="frame-form">
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Имя пользователя:</h1>
+            </div>
+            <div class="form-block">
+                <input [(ngModel)]="name" class="auth-input" type="text" placeholder="Введите имя" maxlength="100">
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Логин:</h1>
+            </div>
+            <div class="form-block">
+                <input [(ngModel)]="login" class="auth-input" type="text" placeholder="Введите логин" maxlength="100">
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Пароль пользователя:</h1>
+            </div>
+            <div class="form-block">
+                <input [(ngModel)]="password" class="auth-input" type="text" placeholder="Введите пароль" maxlength="100">
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Статус:</h1>
+            </div>
+            <div class="form-block">
+                <select [(ngModel)]="status">
+                    <option value="user">User</option>
+                    <option value="manager">Manager</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

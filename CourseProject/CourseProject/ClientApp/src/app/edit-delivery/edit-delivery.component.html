@@ -1,0 +1,62 @@
+<div *ngIf="user.id == 1" class="page-selection">
+    <div class="head-block">
+        <h2>Изменить текущую поставку</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" [routerLink]="['/delivery-info']">
+            <h1>Назад</h1>
+        </button>
+        <button class="fisrt-variation-bar" (click)="deleteDelivery()">
+            <h1>Удалить</h1>
+        </button>
+        <button class="second-variation-bar" (click)="editDelivery()">
+            <h1>Редактировать</h1> 
+        </button>
+    </div>
+    <div class="frame-form">
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Изменить поставщика:</h1>
+            </div>
+            <div class="form-block">
+                <button class="second-variation-bar" (click)="providerClick()">
+                    <h1>Выбрать</h1> 
+                </button>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Поставщик:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{provider.name}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Изменить деталь:</h1>
+            </div>
+            <div class="form-block">
+                <button class="second-variation-bar" (click)="detailClick()">
+                    <h1>Выбрать</h1> 
+                </button>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Деталь:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{detail.name}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Количество деталей:</h1>
+            </div>
+            <div class="form-block">
+                <input [(ngModel)]="delivery.count" class="auth-input" type="number" placeholder="Введите количество">
+            </div>
+        </div>
+    </div>
+</div>

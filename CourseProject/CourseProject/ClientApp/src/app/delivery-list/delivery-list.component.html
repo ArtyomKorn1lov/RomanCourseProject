@@ -1,0 +1,76 @@
+<div *ngIf="user.id == 1" class="page-selection">
+    <div class="head-block">
+        <h2>Список поставок</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" [routerLink]="['/orders']">
+            <h1>Назад</h1>
+        </button>
+        <button class="second-variation-bar" [routerLink]="['/create-delivery']">
+            <h1>Добавить поставку</h1> 
+        </button>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" (click)="reloadList()">
+            <h1>Перезагрузить</h1>
+        </button>
+        <input [(ngModel)]="searchProvider" class="auth-input" type="text" placeholder="Найти по названию поставщика">
+        <button class="second-variation-bar" (click)="getDeliveriesByProviderName()">
+            <h1>Найти</h1>
+        </button>
+    </div>
+    <div class="controll-button-block">
+        <div class="mimic-bar">
+        </div>
+        <input [(ngModel)]="searchDetail" class="auth-input" type="text" placeholder="Найти по названию детали">
+        <button class="second-variation-bar" (click)="getDeliveriesByDetailName()">
+            <h1>Найти</h1> 
+        </button>
+    </div>
+    <div class="object-location">
+        <div class="object">
+            <div class="element">
+                <p>Поставщик</p>
+            </div>
+            <div class="element">
+                <p>Деталь</p>
+            </div>
+            <div class="element">
+                <p>Количество товара</p>
+            </div>
+            <div class="element">
+                <p>Дата поставки</p>
+            </div>
+            <div class="element">
+                <p>Цена поставки</p>
+            </div>
+            <div class="element">
+                <p>Навигация</p>
+            </div>
+        </div>
+        <div class="object-list" *ngFor="let delivery of deliveries">
+            <div class="object">
+                <div class="element">
+                    <p>{{delivery.providerName}}</p>
+                </div>
+                <div class="element">
+                    <p>{{delivery.detailName}}</p>
+                </div>
+                <div class="element">
+                    <p>{{delivery.count}}</p>
+                </div>
+                <div class="element">
+                    <p>{{delivery.date}}</p>
+                </div>
+                <div class="element">
+                    <p>{{delivery.price}}</p>
+                </div>
+                <div class="element-button">
+                    <button class="object-button" [routerLink]="['/delivery-info']" (click)="pushDataInService(delivery.id, delivery.providerId, delivery.detailId)">
+                        <h1>Подробнее</h1>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

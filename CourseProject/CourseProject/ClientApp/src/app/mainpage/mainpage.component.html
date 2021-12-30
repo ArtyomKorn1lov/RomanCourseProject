@@ -1,0 +1,25 @@
+<div class="page-selection">
+    <div class="head-block">
+        <h2>Добро пожаловать сотрудники!</h2>
+    </div>
+    <div class="info-pic-block">
+        <img src="assets/images/pic1.jpg">
+        <div class="text-info">
+            <p>
+                Это веб сервис нашей фирымы по продаже запчастей, предназначеный для взаимодействия с товарами сотрудников нашей компании.
+                <br> Существуют 3 уровня доступа:
+                <br> 1) Обычный работник, который может формировать готовые заказы.
+                <br> 2) Менеджер, который имеет право создавать новые товары.
+                <br> 3) Администраторы, могут управлять учётными записями.
+            </p>
+        </div>
+    </div>
+    <div *ngIf="user.id == 0" class="buttonblock">
+        <button (click)="openRegDialog()" class="fisrt-variation-bar">
+            <h1>Зарегистрироваться</h1>
+        </button>
+        <button (click)="openAuthDialog()" class="second-variation-bar">
+            <h1>Авторизоваться</h1>
+        </button>
+    </div>
+</div>

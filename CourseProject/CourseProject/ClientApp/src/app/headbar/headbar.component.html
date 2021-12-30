@@ -1,0 +1,22 @@
+<div class="head-block">
+    <div class="hyp-bar">
+        <div class="selector-hrev">
+            <a [routerLink]="['/']">Главная</a>
+        </div>
+        <div *ngIf="user.id == 1" class="selector-hrev">
+            <a [routerLink]="['/orders']">Заказы</a>
+        </div>
+        <div [routerLink]="['/user-list']" *ngIf="user.status == 'admin'" class="selector-hrev">
+            <a>Сотрудники</a>
+        </div>
+    </div>
+    <div class="auth-bar">
+        <div *ngIf="user.id == 1; then thenUserBlock else elseUserBlock"></div>
+        <ng-template #thenUserBlock>
+            <h1>Здравствуйте, <a [routerLink]="['/profile-info']">{{user.name}}</a></h1>
+        </ng-template>
+        <ng-template #elseUserBlock>
+            <a (click)="openAuthDialog()">Войти</a>
+        </ng-template>
+    </div>
+</div>

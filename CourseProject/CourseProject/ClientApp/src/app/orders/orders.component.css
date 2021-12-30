@@ -1,0 +1,14 @@
+.create-button-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.create-button-block div+div {
+    margin-left: 100px;
+}
+
+.selector-order {
+    width: 400px;
+}
