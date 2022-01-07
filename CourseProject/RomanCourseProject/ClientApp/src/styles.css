@@ -4,44 +4,40 @@
 }
 
 body {
-    background: #ffffff;
+    background: #000000 url("assets/images/fon.jpg");
 }
 
 p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    color: #ececec;
-    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    color: #2c2c2c;
 }
 
 h1 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
-    color: #ececec;
-    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    color: #2c2c2c;
 }
 
 h2 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     font-style: normal;
     font-weight: bold;
     font-size: 32px;
-    color: #ececec;
-    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    color: #2c2c2c;
 }
 
 a {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
-    color: #ececec;
+    color: #2c2c2c;
     text-decoration: none;
-    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
 a:hover {
@@ -63,8 +59,8 @@ a {
 
 .fisrt-variation-bar {
     width: 300px;
-    background: #444444;
-    border: 3px solid rgb(48, 48, 48);
+    background: rgb(255, 190, 50);
+    border: 3px solid rgb(20, 20, 20);
     border-radius: 15px;
     box-shadow: 0 0 10px;
     padding: 15px;
@@ -76,8 +72,8 @@ a {
 
 .second-variation-bar {
     width: 300px;
-    background: #7c7c7c;
-    border: 3px solid rgb(48, 48, 48);
+    background: #ff9900;
+    border: 3px solid rgb(20, 20, 20);
     border-radius: 15px;
     box-shadow: 0 0 10px;
     padding: 15px;
@@ -167,7 +163,8 @@ a {
 .frame-form {
     display: flex;
     flex-direction: column;
-    border: 5px solid rgb(204, 204, 204);
+    background: rgb(255, 190, 50);
+    border: 5px solid #ff9900;
     border-radius: 5px;
     padding: 5px;
 }

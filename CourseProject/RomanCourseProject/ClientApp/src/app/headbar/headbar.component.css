@@ -1,12 +1,12 @@
 .head-block {
-    background: #444444;
-    border: 10px solid rgb(48, 48, 48);
+    background: #fff9e5;
+    border: 10px solid rgb(255, 136, 0);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    border-radius: 16px;
     box-shadow: 0 0 10px;
+    margin-bottom: 0px;
 }
 
 .hyp-bar {

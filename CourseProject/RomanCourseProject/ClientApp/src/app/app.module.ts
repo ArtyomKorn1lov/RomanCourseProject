@@ -12,23 +12,23 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogAuthComponent } from './dialog-auth/dialog-auth.component';
 import { DialogRegComponent } from './dialog-reg/dialog-reg.component';
-import { DeliveryListComponent } from './delivery-list/delivery-list.component';
-import { CreateDeliveryComponent } from './create-delivery/create-delivery.component';
-import { OrdersComponent } from './orders/orders.component';
-import { DetailListComponent } from './detail-list/detail-list.component';
-import { CreateDetailComponent } from './create-detail/create-detail.component';
-import { DetailInfoComponent } from './detail-info/detail-info.component';
-import { EditDetailComponent } from './edit-detail/edit-detail.component';
-import { ProviderListComponent } from './provider-list/provider-list.component';
-import { ProviderInfoComponent } from './provider-info/provider-info.component';
-import { CreateProviderComponent } from './create-provider/create-provider.component';
-import { EditProviderComponent } from './edit-provider/edit-provider.component';
-import { DetailChoiseComponent } from './detail-choise/detail-choise.component';
-import { DetailChoiseInfoComponent } from './detail-choise-info/detail-choise-info.component';
-import { ProviderChoiseComponent } from './provider-choise/provider-choise.component';
-import { ProviderChoiseInfoComponent } from './provider-choise-info/provider-choise-info.component';
-import { DeliveryInfoComponent } from './delivery-info/delivery-info.component';
-import { EditDeliveryComponent } from './edit-delivery/edit-delivery.component';
+import { OrdersListComponent } from './orders-list/orders-list.component';
+import { CreatOrdersComponent } from './create-orders/create-orders.component';
+import { ChoiseTabComponent } from './choise-tab/choise-tab';
+import { ProductListComponent } from './product-list/product-list.component';
+import { CreateProductComponent } from './create-product/create-product.component';
+import { ProductInfoComponent } from './product-info/product-info.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerInfoComponent } from './customer-info/customer-info.component';
+import { CreateCustomerComponent } from './create-customer/create-customer.component';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
+import { ProductChoiseComponent } from './product-choise/product-choise.component';
+import { ProductChoiseInfoComponent } from './product-choise-info/product-choise-info.component';
+import { CustomerChoiseComponent } from './customer-choise/customer-choise.component';
+import { CustomerChoiseInfoComponent } from './customer-choise-info/customer-choise-info.component';
+import { OrdersInfoComponent } from './orders-info/orders-info.component';
+import { EditOrdersComponent } from './edit-orders/edit-orders.component';
 import { ProfileInfoComponent } from './profile-info/profile-info.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserInfoComponent } from './user-info/user-info.component';
@@ -42,23 +42,23 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     MainpageComponent,
     DialogAuthComponent,
     DialogRegComponent,
-    DeliveryListComponent,
-    CreateDeliveryComponent,
-    OrdersComponent,
-    DetailListComponent,
-    CreateDetailComponent,
-    DetailInfoComponent,
-    EditDetailComponent,
-    ProviderListComponent,
-    ProviderInfoComponent,
-    CreateProviderComponent,
-    EditProviderComponent,
-    DetailChoiseComponent,
-    DetailChoiseInfoComponent,
-    ProviderChoiseComponent,
-    ProviderChoiseInfoComponent,
-    DeliveryInfoComponent,
-    EditDeliveryComponent,
+    OrdersListComponent,
+    CreatOrdersComponent,
+    ChoiseTabComponent,
+    ProductListComponent,
+    CreateProductComponent,
+    ProductInfoComponent,
+    EditProductComponent,
+    CustomerListComponent,
+    CustomerInfoComponent,
+    CreateCustomerComponent,
+    EditCustomerComponent,
+    ProductChoiseComponent,
+    ProductChoiseInfoComponent,
+    CustomerChoiseComponent,
+    CustomerChoiseInfoComponent,
+    OrdersInfoComponent,
+    EditOrdersComponent,
     ProfileInfoComponent,
     UserListComponent,
     UserInfoComponent,
@@ -73,23 +73,23 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: MainpageComponent },
-      { path: 'delivery-list', component: DeliveryListComponent },
-      { path: 'create-delivery', component: CreateDeliveryComponent },
-      { path: 'delivery-info', component: DeliveryInfoComponent },
-      { path: 'edit-delivery', component: EditDeliveryComponent },
-      { path: 'detail-choise', component: DetailChoiseComponent },
-      { path: 'detail-choise-info', component: DetailChoiseInfoComponent },
-      { path: 'provider-choise', component: ProviderChoiseComponent },
-      { path: 'provider-choise-info', component: ProviderChoiseInfoComponent },
-      { path: 'detail-list', component: DetailListComponent },
-      { path: 'create-detail', component: CreateDetailComponent },
-      { path: 'detail-info', component: DetailInfoComponent },
-      { path: 'edit-detail', component: EditDetailComponent },
-      { path: 'provider-list', component: ProviderListComponent},
-      { path: 'provider-info', component: ProviderInfoComponent},
-      { path: 'create-provider', component: CreateProviderComponent},
-      { path: 'edit-provider', component: EditProviderComponent},
-      { path: 'orders', component: OrdersComponent },
+      { path: 'delivery-list', component: OrdersListComponent },
+      { path: 'create-delivery', component: CreatOrdersComponent },
+      { path: 'delivery-info', component: OrdersInfoComponent },
+      { path: 'edit-delivery', component: EditOrdersComponent },
+      { path: 'detail-choise', component: ProductChoiseComponent },
+      { path: 'detail-choise-info', component: ProductChoiseInfoComponent },
+      { path: 'provider-choise', component: CustomerChoiseComponent },
+      { path: 'provider-choise-info', component: CustomerChoiseInfoComponent },
+      { path: 'detail-list', component: ProductListComponent },
+      { path: 'create-detail', component: CreateProductComponent },
+      { path: 'detail-info', component: ProductInfoComponent },
+      { path: 'edit-detail', component: EditProductComponent },
+      { path: 'provider-list', component: CustomerListComponent},
+      { path: 'provider-info', component: CustomerInfoComponent},
+      { path: 'create-provider', component: CreateCustomerComponent},
+      { path: 'edit-provider', component: EditCustomerComponent},
+      { path: 'orders', component: ChoiseTabComponent },
       { path: 'profile-info', component: ProfileInfoComponent },
       { path: 'user-list', component: UserListComponent },
       { path: 'user-info', component: UserInfoComponent },
