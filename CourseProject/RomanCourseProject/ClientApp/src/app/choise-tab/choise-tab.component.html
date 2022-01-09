@@ -5,17 +5,22 @@
     <div class="create-button-block">
         <div *ngIf="user.status == 'manager' || user.status == 'admin'">
             <button class="second-variation-bar" [routerLink]="['/detail-list']">
-                <h1>Детали</h1>
+                <h1>Товары</h1>
             </button>
         </div>
         <div>
             <button class="second-variation-bar" [routerLink]="['/delivery-list']">
-                <h1>Поставки</h1>
+                <h1>Заказы</h1>
             </button>
         </div>
         <div *ngIf="user.status == 'manager' || user.status == 'admin'">
             <button class="second-variation-bar" [routerLink]="['/provider-list']">
-                <h1>Поставщики</h1>
+                <h1>Заказчики</h1>
+            </button>
+        </div>
+        <div *ngIf="user.status == 'manager' || user.status == 'admin'">
+            <button class="second-variation-bar" [routerLink]="['/supply-list']">
+                <h1>Поставки</h1>
             </button>
         </div>
     </div>

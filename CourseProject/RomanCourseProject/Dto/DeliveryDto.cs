@@ -8,7 +8,7 @@ namespace RomanCourseProject.Dto
     public class DeliveryDto
     {
         public int Id { get; set; }
-        public int DeliveryMethod { get; set; }
+        public string DeliveryMethod { get; set; }
         public int Price { get; set; }
         public DateTime Date { get; set; }
     }

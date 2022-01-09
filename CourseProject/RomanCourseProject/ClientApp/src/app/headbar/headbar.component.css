@@ -1,11 +1,10 @@
 .head-block {
-    background: #fff9e5;
-    border: 10px solid rgb(255, 136, 0);
+    background: rgb(255, 190, 50);
+    border: 10px solid rgb(255, 190, 50);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    box-shadow: 0 0 10px;
     margin-bottom: 0px;
 }
 

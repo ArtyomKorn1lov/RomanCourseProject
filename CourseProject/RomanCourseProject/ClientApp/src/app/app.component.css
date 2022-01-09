@@ -6,7 +6,7 @@
 }
 
 .centered-container {
-    width: 1400px;
+    width: 1600px;
     position: relative;
     background: #fff9e5;
     flex-grow: 1;
@@ -19,7 +19,6 @@
     display: flex;
     justify-content: center;
     min-width: 1440px;
-    box-shadow: 0 0 10px;
 }
 
 .footer-block-container {

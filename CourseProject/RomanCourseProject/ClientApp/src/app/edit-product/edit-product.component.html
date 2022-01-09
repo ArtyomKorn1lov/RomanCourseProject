@@ -1,6 +1,6 @@
 <div *ngIf="user.status == 'manager' || user.status == 'admin'" class="page-selection">
     <div class="head-block">
-        <h2>Редактировать деталь</h2>
+        <h2>Редактировать товар</h2>
     </div>
     <div class="controll-button-block">
         <button class="fisrt-variation-bar" [routerLink]="['/detail-info']">
@@ -16,7 +16,7 @@
     <div class="frame-form">
         <div class="input-form">
             <div class="form-block">
-                <h1>Название детали:</h1>
+                <h1>Наименование товара:</h1>
             </div>
             <div class="form-block">
                 <input [(ngModel)]="detail.name" class="auth-input" type="text" placeholder="Введите название" maxlength="100">
@@ -24,15 +24,7 @@
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Артикул детали:</h1>
-            </div>
-            <div class="form-block">
-                <input [(ngModel)]="detail.articleNumber" class="auth-input" type="number" placeholder="Введите артикул">
-            </div>
-        </div>
-        <div class="input-form">
-            <div class="form-block">
-                <h1>Цена детали:</h1>
+                <h1>Цена товара:</h1>
             </div>
             <div class="form-block">
                 <input [(ngModel)]="detail.price" class="auth-input" type="number" placeholder="Введите цену">
@@ -40,10 +32,10 @@
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Краткое описание детали:</h1>
+                <h1>Краткое описание товара:</h1>
             </div>
             <div class="form-block">
-                <textarea maxlength="300" [(ngModel)]="detail.note" class="form-textarea" placeholder="Краткое описание детали (300 символов)"></textarea>
+                <textarea maxlength="150" [(ngModel)]="detail.note" class="form-textarea" placeholder="Краткое описание товара (150 символов)"></textarea>
             </div>
         </div>
     </div>

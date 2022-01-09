@@ -1,6 +1,6 @@
 <div *ngIf="user.id == 1" class="page-selection">
     <div class="head-block">
-        <h2>Добавить новую поставку</h2>
+        <h2>Добавить новый заказ</h2>
     </div>
     <div class="controll-button-block">
         <button class="fisrt-variation-bar" [routerLink]="['/delivery-list']">
@@ -13,7 +13,7 @@
     <div class="frame-form">
         <div class="input-form">
             <div class="form-block">
-                <h1>Добавить поставщика:</h1>
+                <h1>Добавить заказчика:</h1>
             </div>
             <div class="form-block">
                 <button class="second-variation-bar" (click)="providerClick()">
@@ -23,7 +23,7 @@
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Поставщик:</h1>
+                <h1>Заказчик:</h1>
             </div>
             <div class="form-block">
                 <h1>{{provider.name}}</h1>
@@ -31,7 +31,7 @@
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Добавить деталь:</h1>
+                <h1>Добавить товар:</h1>
             </div>
             <div class="form-block">
                 <button class="second-variation-bar" (click)="detailClick()">
@@ -41,7 +41,7 @@
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Добавить деталь:</h1>
+                <h1>Товар:</h1>
             </div>
             <div class="form-block">
                 <h1>{{detail.name}}</h1>
@@ -49,7 +49,25 @@
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Количество деталей:</h1>
+                <h1>Добавить поставку:</h1>
+            </div>
+            <div class="form-block">
+                <button class="second-variation-bar" (click)="supplyClick()">
+                    <h1>Выбрать</h1> 
+                </button>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Номер поставки:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{supplyId}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Количество товара:</h1>
             </div>
             <div class="form-block">
                 <input [(ngModel)]="count" class="auth-input" type="number" placeholder="Введите количество">

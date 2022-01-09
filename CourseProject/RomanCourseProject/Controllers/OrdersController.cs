@@ -122,5 +122,16 @@ namespace RomanCourseProject.Controllers
             }
             return OrdersDtoConverter.ConvertToOrdersDto(order);
         }
+
+        [HttpGet("by-delivery-id/{id}")]
+        public async Task<OrdersDto> GetByDeliveryId(int id)
+        {
+            Orders order = await _ordersService.CheckByDeliveryId(id);
+            if (order == null)
+            {
+                return null;
+            }
+            return OrdersDtoConverter.ConvertToOrdersDto(order);
+        }
     }
 }

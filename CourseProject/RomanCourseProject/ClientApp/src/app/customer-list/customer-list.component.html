@@ -1,20 +1,20 @@
 <div *ngIf="user.status == 'manager' || user.status == 'admin'" class="page-selection">
     <div class="head-block">
-        <h2>Список поставщиков</h2>
+        <h2>Список заказчиков</h2>
     </div>
     <div class="controll-button-block">
         <button class="fisrt-variation-bar" [routerLink]="['/orders']">
             <h1>Назад</h1>
         </button>
         <button class="second-variation-bar" [routerLink]="['/create-provider']">
-            <h1>Добавить поставщика</h1> 
+            <h1>Добавить заказчика</h1> 
         </button>
     </div>
     <div class="controll-button-block">
         <button class="fisrt-variation-bar" (click)="reloadList()">
             <h1>Перезагрузить</h1>
         </button>
-        <input [(ngModel)]="search" class="auth-input" type="text" placeholder="Найти по названию">
+        <input [(ngModel)]="search" class="auth-input" type="text" placeholder="Найти по наименованию">
         <button class="second-variation-bar" (click)="getProvidersByName()">
             <h1>Найти</h1> 
         </button>
@@ -34,6 +34,9 @@
                 <p>Телефон</p>
             </div>
             <div class="element">
+                <p>Контакты</p>
+            </div>
+            <div class="element">
                 <p>Навигация</p>
             </div>
         </div>
@@ -50,6 +53,9 @@
                 </div>
                 <div class="element">
                     <p>{{provider.phone}}</p>
+                </div>
+                <div class="element">
+                    <p>{{provider.contacts}}</p>
                 </div>
                 <div class="element-button">
                     <button class="object-button" [routerLink]="['/provider-info']" (click)="pushDataInService(provider.id)">

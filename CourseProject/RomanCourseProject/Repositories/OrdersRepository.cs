@@ -56,12 +56,12 @@ namespace RomanCourseProject.Repositories
 
         public async Task<Orders> CheckByProductId(int id)
         {
-            return await _orderDbContext.Set<Orders>().FirstOrDefaultAsync(d => d.CustomerId == id);
+            return await _orderDbContext.Set<Orders>().FirstOrDefaultAsync(d => d.ProductId == id);
         }
 
         public async Task<Orders> CheckByCustomerId(int id)
         {
-            return await _orderDbContext.Set<Orders>().FirstOrDefaultAsync(d => d.ProductId == id);
+            return await _orderDbContext.Set<Orders>().FirstOrDefaultAsync(d => d.CustomerId == id);
         }
 
         public async Task<Orders> CheckByDeliveryId(int id)

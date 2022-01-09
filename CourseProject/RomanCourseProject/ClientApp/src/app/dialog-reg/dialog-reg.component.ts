@@ -6,6 +6,8 @@ import { CreateUserDto } from '../dto/CreateUserDto';
 import { HeadbarComponent } from '../headbar/headbar.component';
 import { UserService } from '../services/user.service';
 
+/*declare var require: any;*/
+
 @Component({
   selector: 'app-dialog-reg',
   templateUrl: './dialog-reg.component.html',
@@ -13,6 +15,7 @@ import { UserService } from '../services/user.service';
 })
 export class DialogRegComponent implements OnInit {
 
+  
   name: string | undefined;
   login: string | undefined;
   password: string | undefined;
@@ -20,6 +23,12 @@ export class DialogRegComponent implements OnInit {
   public result: any | undefined;
 
   constructor(public dialogRef: MatDialogRef<DialogRegComponent>, public dialog: MatDialog, private userService: UserService, private router: Router) { }
+
+  /*HashPassword(currentPass: string): string {
+    var passwordHash = require('password-hash');
+    var hashedPassword = passwordHash.generate(currentPass);
+    return hashedPassword;
+  }*/
 
   registrateNewUser(): void {
     if (this.name == undefined || this.name.trim() == '') {
@@ -48,6 +57,7 @@ export class DialogRegComponent implements OnInit {
       this.confirm_password = '';
       return;
     }
+    /*var hashPass = this.HashPassword(this.password);*/
     var user = new CreateUserDto(this.name, this.login, this.password, "user");
     this.userService.checkLogin(user.login).subscribe(data => {
       if(data != null)

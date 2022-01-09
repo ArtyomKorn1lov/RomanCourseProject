@@ -20,7 +20,7 @@ namespace RomanCourseProject.Configurations
             builder.Property(p => p.Price).IsRequired();
             builder.Property(p => p.Date).IsRequired();
 
-            builder.HasMany(p => p.Orders).WithOne().HasForeignKey(i => i.ProductId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasMany(p => p.Orders).WithOne().HasForeignKey(i => i.DeliveryId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

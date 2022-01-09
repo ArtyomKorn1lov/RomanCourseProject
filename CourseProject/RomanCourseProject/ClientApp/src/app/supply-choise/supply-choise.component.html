@@ -1,0 +1,61 @@
+<div *ngIf="user.id == 1" class="page-selection">
+    <div class="head-block">
+        <h2>Выберете заказчика</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" (click)="routerBack()">
+            <h1>Назад</h1>
+        </button>
+        <div class="object">
+        </div>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" (click)="reloadList()">
+            <h1>Перезагрузить</h1>
+        </button>
+        <input [(ngModel)]="search" class="auth-input" type="number" placeholder="Найти по цене">
+        <button class="second-variation-bar" (click)="getSuppliesByPrice()">
+            <h1>Найти</h1> 
+        </button>
+    </div>
+    <div class="object-location">
+        <div class="object">
+            <div class="element">
+                <p>Id</p>
+            </div>
+            <div class="element">
+                <p>Способ доставки</p>
+            </div>
+            <div class="element">
+                <p>Цена доставки</p>
+            </div>
+            <div class="element">
+                <p>Дата доставки</p>
+            </div>
+            <div class="element">
+                <p>Навигация</p>
+            </div>
+        </div>
+        <div class="object-list" *ngFor="let supply of supplies">
+            <div class="object">
+                <div class="element">
+                    <p>{{supply.id}}</p>
+                </div>
+                <div class="element">
+                    <p>{{supply.deliveryMethod}}</p>
+                </div>
+                <div class="element">
+                    <p>{{supply.price}}</p>
+                </div>
+                <div class="element">
+                    <p>{{supply.date}}</p>
+                </div>
+                <div class="element-button">
+                    <button class="object-button" [routerLink]="['/supply-choise-info']" (click)="pushDataInService(supply.id)">
+                        <h1>Подробнее</h1>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

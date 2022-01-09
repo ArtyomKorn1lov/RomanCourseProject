@@ -21,6 +21,7 @@ namespace RomanCourseProject.Converters
                 Name = customer.Name,
                 Address = customer.Address,
                 Phone = customer.Phone,
+                Contacts = customer.Contacts,
             };
         }
         public static Customer CovertToCustomerEntity(CustomerDto customer)
@@ -35,6 +36,7 @@ namespace RomanCourseProject.Converters
                 Name = customer.Name,
                 Address = customer.Address,
                 Phone = customer.Phone,
+                Contacts = customer.Contacts,
             };
         }
     }

@@ -1,6 +1,6 @@
 <div *ngIf="user.status == 'manager' || user.status == 'admin'" class="page-selection">
     <div class="head-block">
-        <h2>Подробнее о детали</h2>
+        <h2>Подробнее о товаре</h2>
     </div>
     <div class="controll-button-block">
         <button class="fisrt-variation-bar" [routerLink]="['/detail-list']">
@@ -13,7 +13,7 @@
     <div class="frame-form">
         <div class="input-form">
             <div class="form-block">
-                <h1>Название детали:</h1>
+                <h1>Наименование товара:</h1>
             </div>
             <div class="form-block">
                 <h1>{{detail.name}}</h1>
@@ -21,15 +21,7 @@
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Артикул детали:</h1>
-            </div>
-            <div class="form-block">
-                <h1>{{detail.articleNumber}}</h1>
-            </div>
-        </div>
-        <div class="input-form">
-            <div class="form-block">
-                <h1>Цена детали:</h1>
+                <h1>Цена товара:</h1>
             </div>
             <div class="form-block">
                 <h1>{{detail.price}}</h1>
@@ -37,7 +29,7 @@
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Краткое описание детали:</h1>
+                <h1>Краткое описание товара:</h1>
             </div>
             <div class="form-block">
                 <h1>{{detail.note}}</h1>

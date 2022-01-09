@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CreateDetailDto } from '../dto/createProductDto';
+import { CreateProductDto } from '../dto/createProductDto';
 import { ProductService } from '../services/product.service';
 import { User } from '../dto/User';
 import { UserService } from '../services/user.service';
@@ -13,7 +13,6 @@ import { UserService } from '../services/user.service';
 export class CreateProductComponent implements OnInit {
 
   name: string | undefined;
-  article: number | undefined;
   price: number | undefined;
   note: string = "";
   private targetRoute: string = '/detail-list';
@@ -27,19 +26,9 @@ export class CreateProductComponent implements OnInit {
       this.name = '';
       return;
     }
-    if (this.article == null) {
-      alert("Введите артикль");
-      this.article = 0;
-      return;
-    }
     if (this.price == null || this.price == 0) {
       alert("Введите цену");
       this.price = 1;
-      return;
-    }
-    if (this.article >= 2000000000) {
-      alert("Слишком большое число для артикля");
-      this.article = 0;
       return;
     }
     if (this.price >= 2000000000) {
@@ -47,15 +36,9 @@ export class CreateProductComponent implements OnInit {
       this.price = 1;
       return;
     }
-    var detail = new CreateDetailDto(this.name, this.article, this.price, this.note);
-    this.detailService.checkByArticle(detail.articleNumber).subscribe(data => {
-      if(data != null) {
-        alert("Деталь с данным артиклем уже используется, введите другой артикль");
-        return;
-      }
-      this.detailService.createDetail(detail).subscribe(x => console.log(x));
-      this.router.navigateByUrl(this.targetRoute);
-    });
+    var detail = new CreateProductDto(this.name, this.price, this.note);
+    this.detailService.createDetail(detail).subscribe(x => console.log(x));
+    this.router.navigateByUrl(this.targetRoute);
   }
 
   getUser() {

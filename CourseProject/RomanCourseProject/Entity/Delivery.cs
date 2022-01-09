@@ -8,7 +8,7 @@ namespace RomanCourseProject.Entity
     public class Delivery
     {
         public int Id { get; set; }
-        public int DeliveryMethod { get; set; }
+        public string DeliveryMethod { get; set; }
         public int Price { get; set; }
         public DateTime Date { get; set; }
         public List<Orders> Orders { get; set; }

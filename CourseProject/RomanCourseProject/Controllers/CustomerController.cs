@@ -36,7 +36,7 @@ namespace RomanCourseProject.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateDetail(CustomerDto customerDto)
+        public async Task<IActionResult> CreateCustomer(CustomerDto customerDto)
         {
             if (await _customerService.Create(CustomerDtoConverter.CovertToCustomerEntity(customerDto)))
             {
@@ -47,7 +47,7 @@ namespace RomanCourseProject.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteDetail(int id)
+        public async Task<IActionResult> DeleteCustomer(int id)
         {
             if (await _customerService.Delete(id))
             {
@@ -58,7 +58,7 @@ namespace RomanCourseProject.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<CustomerDto> GetDetailById(int id)
+        public async Task<CustomerDto> GetCustomerById(int id)
         {
             Customer customer = await _customerService.GetById(id);
             if (customer == null)
@@ -69,7 +69,7 @@ namespace RomanCourseProject.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateDetail(CustomerDto customer)
+        public async Task<IActionResult> UpdateCustomer(CustomerDto customer)
         {
             if (await _customerService.Update(CustomerDtoConverter.CovertToCustomerEntity(customer)))
             {

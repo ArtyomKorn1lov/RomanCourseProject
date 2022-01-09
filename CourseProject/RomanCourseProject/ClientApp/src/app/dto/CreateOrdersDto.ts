@@ -1,16 +1,16 @@
 export class CreateOrdersDto
 {
-    providerId: number;
-    detailId: number;
+    customerId: number;
+    productId: number;
     count: number;
     date: Date;
     deliveryId: number;
     price: number;
 
-    constructor(_providerId: number, _detailId: number, _count: number, _date: Date, _deliveryId: number, _price: number)
+    constructor(_customerId: number, _productId: number, _count: number, _date: Date, _deliveryId: number, _price: number)
     {
-        this.providerId = _providerId;
-        this.detailId = _detailId;
+        this.customerId = _customerId;
+        this.productId = _productId;
         this.count = _count;
         this.date = _date;
         this.deliveryId = _deliveryId;

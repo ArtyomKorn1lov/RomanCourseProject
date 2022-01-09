@@ -1,6 +1,6 @@
 <div *ngIf="user.id == 1" class="page-selection">
     <div class="head-block">
-        <h2>Выберете деталь</h2>
+        <h2>Выберете товар</h2>
     </div>
     <div class="controll-button-block">
         <button class="fisrt-variation-bar" (click)="routerBack()">
@@ -13,7 +13,7 @@
         <button class="fisrt-variation-bar" (click)="reloadList()">
             <h1>Перезагрузить</h1>
         </button>
-        <input [(ngModel)]="search" class="auth-input" type="text" placeholder="Найти по названию">
+        <input [(ngModel)]="search" class="auth-input" type="text" placeholder="Найти по наименованию">
         <button class="second-variation-bar" (click)="getDetailsByName()">
             <h1>Найти</h1> 
         </button>
@@ -24,10 +24,7 @@
                 <p>Id</p>
             </div>
             <div class="element">
-                <p>Название</p>
-            </div>
-            <div class="element">
-                <p>Номер</p>
+                <p>Наименование</p>
             </div>
             <div class="element">
                 <p>Цена</p>
@@ -43,9 +40,6 @@
                 </div>
                 <div class="element">
                     <p>{{detail.name}}</p>
-                </div>
-                <div class="element">
-                    <p>{{detail.articleNumber}}</p>
                 </div>
                 <div class="element">
                     <p>{{detail.price}}</p>

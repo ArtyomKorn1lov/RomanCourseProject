@@ -17,36 +17,36 @@ namespace RomanCourseProject.Repositories
             _orderDbContext = context;
         }
 
-        public async Task Create(Delivery delivery)
+        public void Create(Delivery delivery)
         {
-            await _orderDbContext.Set<Delivery>().AddAsync(delivery);
+            _orderDbContext.Set<Delivery>().Add(delivery);
         }
 
-        public async Task Delete(int id)
+        public void Delete(int id)
         {
-            Delivery delivery = await GetById(id);
+            Delivery delivery = GetById(id);
             if (delivery != null)
                 _orderDbContext.Set<Delivery>().Remove(delivery);
         }
 
-        public async Task<List<Delivery>> GetAll()
+        public List<Delivery> GetAll()
         {
-            return await _orderDbContext.Set<Delivery>().ToListAsync();
+            return _orderDbContext.Set<Delivery>().ToList();
         }
 
-        public async Task<Delivery> GetById(int id)
+        public Delivery GetById(int id)
         {
-            return await _orderDbContext.Set<Delivery>().FirstOrDefaultAsync(d => d.Id == id);
+            return _orderDbContext.Set<Delivery>().FirstOrDefault(d => d.Id == id);
         }
 
-        public async Task<List<Delivery>> GetByPrice(int price)
+        public List<Delivery> GetByPrice(int price)
         {
-            return await _orderDbContext.Set<Delivery>().Where(d => EF.Functions.Like(d.Price.ToString(), price.ToString())).ToListAsync();
+            return _orderDbContext.Set<Delivery>().Where(d => EF.Functions.Like(d.Price.ToString(), price.ToString())).ToList();
         }
 
-        public async Task Update(Delivery delivery)
+        public void Update(Delivery delivery)
         {
-            Delivery _delivery = await GetById(delivery.Id);
+            Delivery _delivery = GetById(delivery.Id);
             _delivery.CopyFrom(delivery);
         }
     }

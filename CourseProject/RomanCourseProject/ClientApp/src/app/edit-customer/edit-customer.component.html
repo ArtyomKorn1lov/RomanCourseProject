@@ -1,6 +1,6 @@
 <div *ngIf="user.status == 'manager' || user.status == 'admin'" class="page-selection">
     <div class="head-block">
-        <h2>Редактировать поставщика</h2>
+        <h2>Редактировать заказчика</h2>
     </div>
     <div class="controll-button-block">
         <button class="fisrt-variation-bar" [routerLink]="['/provider-info']">
@@ -16,7 +16,7 @@
     <div class="frame-form">
         <div class="input-form">
             <div class="form-block">
-                <h1>Наименование поставщика:</h1>
+                <h1>Наименование заказчика:</h1>
             </div>
             <div class="form-block">
                 <input [(ngModel)]="provider.name" class="auth-input" type="text" placeholder="Введите наименование" maxlength="100">
@@ -24,7 +24,7 @@
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Адрес поставщика:</h1>
+                <h1>Адрес заказчика:</h1>
             </div>
             <div class="form-block">
                 <input [(ngModel)]="provider.address" class="auth-input" type="text" placeholder="Введите адрес" maxlength="100">
@@ -32,10 +32,18 @@
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Телефон поставщика:</h1>
+                <h1>Телефон заказчика:</h1>
             </div>
             <div class="form-block">
                 <input [(ngModel)]="provider.phone" class="auth-input" type="text" placeholder="Введите телефон" maxlength="100">
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Контакты заказчика:</h1>
+            </div>
+            <div class="form-block">
+                <input [(ngModel)]="provider.contacts" class="auth-input" type="text" placeholder="Введите Контакты" maxlength="100">
             </div>
         </div>
     </div>

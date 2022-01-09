@@ -39,6 +39,7 @@ namespace RomanCourseProject.Converters
                 CustomerId = order.CustomerId,
                 Count = order.Count,
                 Date = order.Date,
+                DeliveryId = order.DeliveryId,
                 Price = order.Price
             };
         }

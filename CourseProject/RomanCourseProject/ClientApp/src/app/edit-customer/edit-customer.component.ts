@@ -21,7 +21,7 @@ export class EditCustomerComponent implements OnInit {
 
   UpdateProvider(): void {
     if (this.provider.name == null || this.provider.name.trim() == '') {
-      alert("Введите наименование поставщика");
+      alert("Введите наименование заказчика");
       this.provider.name = '';
       return;
     }
@@ -35,23 +35,27 @@ export class EditCustomerComponent implements OnInit {
       this.provider.phone = '';
       return;
     }
+    if (this.provider.contacts == null || this.provider.contacts.trim() == '') {
+      alert("Введите контакты");
+      this.provider.phone = '';
+      return;
+    }
     this.providerService.updateProvider(this.provider).subscribe(x => console.log(x));
     this.router.navigateByUrl(this.targetRoute);
   }
 
   deleteProvider(id: number): void{
-    if (confirm("Вы уверены, что хотите удалить данного поставщика?")) {
+    if (confirm("Вы уверены, что хотите удалить данного заказчика?")) {
       this.deliveyService.checkByProviderId(id).subscribe(data => {
         if(data != null)
         {
-          alert("Удаление невозможно, данный поставщик уже используется в поставке");
+          alert("Удаление невозможно, данный заказчик уже используется в заказе");
           return;
         }
         this.providerService.deleteProvider(id).subscribe(x => console.log(x));
         this.router.navigateByUrl('/provider-list');
       });
     }
-    
   }
 
   getUser() {

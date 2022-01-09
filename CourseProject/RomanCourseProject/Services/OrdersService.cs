@@ -193,12 +193,12 @@ namespace RomanCourseProject.Services
             Customer customer = new Customer();
             for(int count = 0; count < orders.Count; count++)
             {
-                product = await _productService.GetById(orders[count].CustomerId);
-                customer = await _customerService.GetById(orders[count].ProductId);
+                product = await _productService.GetById(orders[count].ProductId);
+                customer = await _customerService.GetById(orders[count].CustomerId);
                 orderInfoDtos.Add(new OrdersInfoDto(
                     orders[count].Id,
-                    orders[count].CustomerId,
                     orders[count].ProductId,
+                    orders[count].CustomerId,
                     product.Name,
                     customer.Name,
                     orders[count].Count,

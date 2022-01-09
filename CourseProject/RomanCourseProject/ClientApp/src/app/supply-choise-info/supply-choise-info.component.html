@@ -1,0 +1,47 @@
+<div *ngIf="user.id == 1" class="page-selection">
+    <div class="head-block">
+        <h2>Выбрать данную поставку?</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" [routerLink]="['/supply-choise']">
+            <h1>Назад</h1>
+        </button>
+        <button class="second-variation-bar" (click)="choiseSupply(supply.id)">
+            <h1>Выбрать</h1> 
+        </button>
+    </div>
+    <div class="frame-form">
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Номер заказа:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{supply.id}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Способ доставки:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{supply.deliveryMethod}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Цена поставки:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{supply.price}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Дата поставки:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{supply.date}}</h1>
+            </div>
+        </div>
+    </div>
+</div>

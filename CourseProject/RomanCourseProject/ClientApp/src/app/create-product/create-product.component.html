@@ -1,6 +1,6 @@
 <div *ngIf="user.status == 'manager' || user.status == 'admin'" class="page-selection">
     <div class="head-block">
-        <h2>Добавить новую деталь</h2>
+        <h2>Добавить новый товар</h2>
     </div>
     <div class="controll-button-block">
         <button class="fisrt-variation-bar" [routerLink]="['/detail-list']">
@@ -13,23 +13,15 @@
     <div class="frame-form">
         <div class="input-form">
             <div class="form-block">
-                <h1>Название детали:</h1>
+                <h1>Наименование товара:</h1>
             </div>
             <div class="form-block">
-                <input [(ngModel)]="name" class="auth-input" type="text" placeholder="Введите название" maxlength="100">
-            </div>
-        </div>
-        <div class="input-form">
-            <div class="form-block">
-                <h1>Артикул детали:</h1>
-            </div>
-            <div class="form-block">
-                <input [(ngModel)]="article" class="auth-input" type="number" placeholder="Введите артикул">
+                <input [(ngModel)]="name" class="auth-input" type="text" placeholder="Введите наименование" maxlength="100">
             </div>
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Цена детали:</h1>
+                <h1>Цена товара:</h1>
             </div>
             <div class="form-block">
                 <input [(ngModel)]="price" class="auth-input" type="number" placeholder="Введите цену">
@@ -37,10 +29,10 @@
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Краткое описание детали:</h1>
+                <h1>Краткое описание товара:</h1>
             </div>
             <div class="form-block">
-                <textarea maxlength="300" [(ngModel)]="note" class="form-textarea" placeholder="Краткое описание детали (максимум 300 символов)" maxlength="150"></textarea>
+                <textarea maxlength="300" [(ngModel)]="note" class="form-textarea" placeholder="Краткое описание товара (максимум 150 символов)" maxlength="150"></textarea>
             </div>
         </div>
     </div>

@@ -2,14 +2,14 @@ import { Injectable, OnInit } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../dto/product';
-import { CreateDetailDto } from '../dto/createProductDto';
+import { CreateProductDto } from '../dto/createProductDto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
   
-  private commonUrl: string = 'api/detail';
+  private commonUrl: string = 'api/product';
 
   constructor(private http: HttpClient) { }
 
@@ -31,7 +31,7 @@ export class ProductService {
     return this.http.get<Product[]>(`${this.commonUrl}/all`);
   }
 
-  createDetail(detail: CreateDetailDto): Observable<object>{
+  createDetail(detail: CreateProductDto): Observable<object>{
     return this.http.post<Product>(`${this.commonUrl}`, detail);
   }
 
@@ -49,9 +49,5 @@ export class ProductService {
 
   getByName(name: string): Observable<Product[]>{
     return this.http.get<Product[]>(`${this.commonUrl}/by-name/${name}`);
-  }
-
-  checkByArticle(article: number): Observable<Product> {
-    return this.http.get<Product>(`${this.commonUrl}/by-article/${article}`);
   }
 }

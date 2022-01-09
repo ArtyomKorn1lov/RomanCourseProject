@@ -1,0 +1,32 @@
+<div *ngIf="user.status == 'manager' || user.status == 'admin'" class="page-selection">
+    <div class="head-block">
+        <h2>Редактировать поставку</h2>
+    </div>
+    <div class="controll-button-block">
+        <button class="fisrt-variation-bar" [routerLink]="['/supply-info']">
+            <h1>Назад</h1>
+        </button>
+        <button class="fisrt-variation-bar" (click)="deleteSupply(supply.id)">
+            <h1>Удалить</h1>
+        </button>
+        <button class="second-variation-bar" (click)="UpdateSupply()">
+            <h1>Редактировать</h1> 
+        </button>
+    </div>
+    <div class="frame-form">
+        <div class="input-form">
+            <div class="input-form">
+                <div class="form-block">
+                    <h1>Способ доставки:</h1>
+                </div>
+                <div class="form-block">
+                    <select [(ngModel)]="supply.deliveryMethod" ng-change="setPrice()">
+                        <option value="По почте">По почте - 300 рублей</option>
+                        <option value="Через курьера">Через курьера - 500 рублей</option>
+                        <option value="Забрать в отделении">Забрать в отделении - 0 рублей</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

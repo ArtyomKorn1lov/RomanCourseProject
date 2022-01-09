@@ -1,20 +1,20 @@
 <div *ngIf="user.id == 1" class="page-selection">
     <div class="head-block">
-        <h2>Список поставок</h2>
+        <h2>Список заказов</h2>
     </div>
     <div class="controll-button-block">
         <button class="fisrt-variation-bar" [routerLink]="['/orders']">
             <h1>Назад</h1>
         </button>
         <button class="second-variation-bar" [routerLink]="['/create-delivery']">
-            <h1>Добавить поставку</h1> 
+            <h1>Добавить заказ</h1> 
         </button>
     </div>
     <div class="controll-button-block">
         <button class="fisrt-variation-bar" (click)="reloadList()">
             <h1>Перезагрузить</h1>
         </button>
-        <input [(ngModel)]="searchProvider" class="auth-input" type="text" placeholder="Найти по названию поставщика">
+        <input [(ngModel)]="searchProvider" class="auth-input" type="text" placeholder="Найти по наименованию заказчика">
         <button class="second-variation-bar" (click)="getDeliveriesByProviderName()">
             <h1>Найти</h1>
         </button>
@@ -22,7 +22,7 @@
     <div class="controll-button-block">
         <div class="mimic-bar">
         </div>
-        <input [(ngModel)]="searchDetail" class="auth-input" type="text" placeholder="Найти по названию детали">
+        <input [(ngModel)]="searchDetail" class="auth-input" type="text" placeholder="Найти по наименованию товара">
         <button class="second-variation-bar" (click)="getDeliveriesByDetailName()">
             <h1>Найти</h1> 
         </button>
@@ -30,19 +30,22 @@
     <div class="object-location">
         <div class="object">
             <div class="element">
-                <p>Поставщик</p>
+                <p>Заказчик</p>
             </div>
             <div class="element">
-                <p>Деталь</p>
+                <p>Товар</p>
             </div>
             <div class="element">
                 <p>Количество товара</p>
             </div>
             <div class="element">
-                <p>Дата поставки</p>
+                <p>Дата заказа</p>
             </div>
             <div class="element">
-                <p>Цена поставки</p>
+                <p>Номер поставки</p>
+            </div>
+            <div class="element">
+                <p>Цена заказа</p>
             </div>
             <div class="element">
                 <p>Навигация</p>
@@ -51,10 +54,10 @@
         <div class="object-list" *ngFor="let delivery of deliveries">
             <div class="object">
                 <div class="element">
-                    <p>{{delivery.providerName}}</p>
+                    <p>{{delivery.customerName}}</p>
                 </div>
                 <div class="element">
-                    <p>{{delivery.detailName}}</p>
+                    <p>{{delivery.productName}}</p>
                 </div>
                 <div class="element">
                     <p>{{delivery.count}}</p>
@@ -63,10 +66,13 @@
                     <p>{{delivery.date}}</p>
                 </div>
                 <div class="element">
+                    <p>{{delivery.deliveryId}}</p>
+                </div>
+                <div class="element">
                     <p>{{delivery.price}}</p>
                 </div>
                 <div class="element-button">
-                    <button class="object-button" [routerLink]="['/delivery-info']" (click)="pushDataInService(delivery.id, delivery.providerId, delivery.detailId)">
+                    <button class="object-button" [routerLink]="['/delivery-info']" (click)="pushDataInService(delivery.id, delivery.customerId, delivery.productId, delivery.deliveryId)">
                         <h1>Подробнее</h1>
                     </button>
                 </div>

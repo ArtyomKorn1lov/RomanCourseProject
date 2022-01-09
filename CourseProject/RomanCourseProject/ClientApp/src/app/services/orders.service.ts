@@ -3,30 +3,43 @@ import { Observable, of, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Orders } from '../dto/orders';
 import { CreateOrdersDto } from '../dto/CreateOrdersDto';
-import { DeliveryDtoInfo } from '../dto/OrdersInfoDto';
+import { OrdersDtoInfo } from '../dto/OrdersInfoDto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdersService {
 
-  private commonUrl: string = 'api/delivery';
+  private commonUrl: string = 'api/orders';
 
   constructor(private http: HttpClient) { }
 
   public clearSessionStorage(): void{
     sessionStorage.setItem('DeliveryCreateDetailKey', '');
     sessionStorage.setItem('DeliveryCreateProviderKey', '');
+    sessionStorage.setItem('DeliveryCreateSupplyKey', '');
     sessionStorage.setItem('DeliveryIdKey', '');
     sessionStorage.setItem('DeliveryDetailIdKey', '');
     sessionStorage.setItem('DeliveryProviderIdKey', '');
+    sessionStorage.setItem('DeliverySupplyIdKey', '');
     sessionStorage.setItem('DeliveryPage', '');
   }
 
-  public pushInService(id: number, providerId: number , detailId: number): void {
+  public pushInService(id: number, providerId: number , detailId: number, supplyId: number): void {
     sessionStorage.setItem('DeliveryIdKey', id.toString());
     sessionStorage.setItem('DeliveryDetailIdKey', detailId.toString());
     sessionStorage.setItem('DeliveryProviderIdKey', providerId.toString());
+    sessionStorage.setItem('DeliverySupplyIdKey', supplyId.toString());
+  }
+
+  public getDeliverySupplyIdFromService(): number {
+    var currentKey = sessionStorage.getItem('DeliverySupplyIdKey');
+    if(currentKey == null)
+    {
+      return -1;
+    }
+    var currentId = parseInt(currentKey);
+    return currentId;
   }
 
   public getDeliveryIdFromService(): number {
@@ -87,8 +100,22 @@ export class OrdersService {
     return currentProviderId;
   }
 
-  getDeliveries(): Observable<DeliveryDtoInfo[]>{
-    return this.http.get<DeliveryDtoInfo[]>(`${this.commonUrl}/all`);
+  public pushChoiseSupplyId(id: number): void{
+    sessionStorage.setItem('DeliveryCreateSupplyKey', id.toString());
+  }
+
+  public getChoiseSupplyId(): number{
+    var supplyKey = sessionStorage.getItem('DeliveryCreateSupplyKey');
+    if(supplyKey == null || supplyKey == '')
+    {
+      return -1;
+    }
+    var currentSupplyId = parseInt(supplyKey);
+    return currentSupplyId;
+  }
+
+  getDeliveries(): Observable<OrdersDtoInfo[]>{
+    return this.http.get<OrdersDtoInfo[]>(`${this.commonUrl}/all`);
   }
 
   createDelivery(delivery: CreateOrdersDto): Observable<object>{
@@ -107,19 +134,23 @@ export class OrdersService {
     return this.http.put<Orders>(`${this.commonUrl}`, delivery);
   }
 
-  getByDetailName(name: string): Observable<DeliveryDtoInfo[]> {
-    return this.http.get<DeliveryDtoInfo[]>(`${this.commonUrl}/by-detail-name/${name}`);
+  getByDetailName(name: string): Observable<OrdersDtoInfo[]> {
+    return this.http.get<OrdersDtoInfo[]>(`${this.commonUrl}/by-product-name/${name}`);
   }
 
-  getByProviderName(name: string): Observable<DeliveryDtoInfo[]> {
-    return this.http.get<DeliveryDtoInfo[]>(`${this.commonUrl}/by-provider-name/${name}`);
+  getByProviderName(name: string): Observable<OrdersDtoInfo[]> {
+    return this.http.get<OrdersDtoInfo[]>(`${this.commonUrl}/by-customer-name/${name}`);
   }
 
   checkByDetailId(id: number): Observable<Orders> {
-    return this.http.get<Orders>(`${this.commonUrl}/by-detail-id/${id}`);
+    return this.http.get<Orders>(`${this.commonUrl}/by-product-id/${id}`);
   }
 
   checkByProviderId(id: number): Observable<Orders> {
-    return this.http.get<Orders>(`${this.commonUrl}/by-provider-id/${id}`);
+    return this.http.get<Orders>(`${this.commonUrl}/by-customer-id/${id}`);
+  }
+
+  checkBySupplyId(id: number): Observable<Orders> {
+    return this.http.get<Orders>(`${this.commonUrl}/by-delivery-id/${id}`);
   }
 }

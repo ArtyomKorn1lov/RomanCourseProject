@@ -57,8 +57,9 @@ namespace RomanCourseProject.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DeliveryMethod")
-                        .HasColumnType("int");
+                    b.Property<string>("DeliveryMethod")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
@@ -96,6 +97,8 @@ namespace RomanCourseProject.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
+
+                    b.HasIndex("DeliveryId");
 
                     b.HasIndex("ProductId");
 
@@ -154,19 +157,19 @@ namespace RomanCourseProject.Migrations
 
             modelBuilder.Entity("RomanCourseProject.Entity.Orders", b =>
                 {
-                    b.HasOne("RomanCourseProject.Entity.Product", null)
+                    b.HasOne("RomanCourseProject.Entity.Customer", null)
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("RomanCourseProject.Entity.Customer", null)
+                    b.HasOne("RomanCourseProject.Entity.Delivery", null)
                         .WithMany("Orders")
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("DeliveryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("RomanCourseProject.Entity.Delivery", null)
+                    b.HasOne("RomanCourseProject.Entity.Product", null)
                         .WithMany("Orders")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)

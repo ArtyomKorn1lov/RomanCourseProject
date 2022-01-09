@@ -25,9 +25,9 @@ namespace RomanCourseProject.Controllers
         }
 
         [HttpGet("all")]
-        public async Task<List<DeliveryDto>> GetAll()
+        public List<DeliveryDto> GetAll()
         {
-            List<Delivery> deliveries = await _deliveryService.GetAll();
+            List<Delivery> deliveries = _deliveryService.GetAll();
             if (deliveries == null)
             {
                 return new List<DeliveryDto>();
@@ -36,31 +36,31 @@ namespace RomanCourseProject.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateDelivery(DeliveryDto deliveryDto)
+        public IActionResult CreateDelivery(DeliveryDto deliveryDto)
         {
-            if (await _deliveryService.Create(DeliveryDtoConverter.ConvertToDeliveryEntity(deliveryDto)))
+            if (_deliveryService.Create(DeliveryDtoConverter.ConvertToDeliveryEntity(deliveryDto)))
             {
-                await _unitOfWork.Commit();
+                _unitOfWork.Commit();
                 return Ok("success");
             }
             return BadRequest("error");
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteDelivery(int id)
+        public IActionResult DeleteDelivery(int id)
         {
-            if (await _deliveryService.Delete(id))
+            if (_deliveryService.Delete(id))
             {
-                await _unitOfWork.Commit();
+                _unitOfWork.Commit();
                 return Ok("success");
             }
             return BadRequest("error");
         }
 
         [HttpGet("{id}")]
-        public async Task<DeliveryDto> GetDeliveryById(int id)
+        public DeliveryDto GetDeliveryById(int id)
         {
-            Delivery delivery = await _deliveryService.GetById(id);
+            Delivery delivery = _deliveryService.GetById(id);
             if (delivery == null)
             {
                 return new DeliveryDto();
@@ -69,20 +69,20 @@ namespace RomanCourseProject.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateDelivery(DeliveryDto delivery)
+        public IActionResult UpdateDelivery(DeliveryDto delivery)
         {
-            if (await _deliveryService.Update(DeliveryDtoConverter.ConvertToDeliveryEntity(delivery)))
+            if (_deliveryService.Update(DeliveryDtoConverter.ConvertToDeliveryEntity(delivery)))
             {
-                await _unitOfWork.Commit();
+                _unitOfWork.Commit();
                 return Ok("success");
             }
             return BadRequest("error");
         }
 
         [HttpGet("by-price/{price}")]
-        public async Task<List<DeliveryDto>> GetByPrice(int price)
+        public List<DeliveryDto> GetByPrice(int price)
         {
-            List<Delivery> deliveries = await _deliveryService.GetByPrice(price);
+            List<Delivery> deliveries = _deliveryService.GetByPrice(price);
             if (deliveries == null)
             {
                 return new List<DeliveryDto>();

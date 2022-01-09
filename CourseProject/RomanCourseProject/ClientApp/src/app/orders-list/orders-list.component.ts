@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DeliveryDtoInfo } from '../dto/OrdersInfoDto';
+import { OrdersDtoInfo } from '../dto/OrdersInfoDto';
 import { OrdersService } from '../services/orders.service';
 import { User } from '../dto/User';
 import { UserService } from '../services/user.service';
@@ -13,7 +13,7 @@ export class OrdersListComponent implements OnInit {
 
   searchDetail : string | undefined;
   searchProvider : string | undefined;
-  public deliveries: DeliveryDtoInfo[] = [];
+  public deliveries: OrdersDtoInfo[] = [];
   public user: User = new User(0, '', '', '', '');
 
   constructor(private userService: UserService, private deliveryService: OrdersService) { }
@@ -51,8 +51,8 @@ export class OrdersListComponent implements OnInit {
     this.deliveryService.getDeliveries().subscribe(data => this.deliveries = data);
   }
 
-  pushDataInService(id: number, providerId: number, detailId: number): void {
-    this.deliveryService.pushInService(id, providerId, detailId);
+  pushDataInService(id: number, customerId: number, productId: number, deliveryId: number): void {
+    this.deliveryService.pushInService(id, customerId, productId, deliveryId);
   }
 
   getUser() {

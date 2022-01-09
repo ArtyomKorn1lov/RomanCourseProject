@@ -14,7 +14,7 @@ import { DialogAuthComponent } from './dialog-auth/dialog-auth.component';
 import { DialogRegComponent } from './dialog-reg/dialog-reg.component';
 import { OrdersListComponent } from './orders-list/orders-list.component';
 import { CreatOrdersComponent } from './create-orders/create-orders.component';
-import { ChoiseTabComponent } from './choise-tab/choise-tab';
+import { ChoiseTabComponent } from './choise-tab/choise-tab.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
@@ -34,6 +34,12 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { SupplyListComponent } from './supply-list/supply-list.component';
+import { SupplyInfoComponent } from './supply-info/supply-info.component';
+import { SupplyChoiseComponent } from './supply-choise/supply-choise.component';
+import { SupplyChoiseInfoComponent } from './supply-choise-info/supply-choise-info.component';
+import { CreateSupplyComponent } from './create-supply/create-supply.component';
+import { EditSupplyComponent } from './edit-supply/edit-supply.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +70,12 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     UserInfoComponent,
     UserCreateComponent,
     UserEditComponent,
+    SupplyListComponent,
+    SupplyInfoComponent,
+    SupplyChoiseComponent,
+    SupplyChoiseInfoComponent,
+    CreateSupplyComponent,
+    EditSupplyComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,6 +101,12 @@ import { UserEditComponent } from './user-edit/user-edit.component';
       { path: 'provider-info', component: CustomerInfoComponent},
       { path: 'create-provider', component: CreateCustomerComponent},
       { path: 'edit-provider', component: EditCustomerComponent},
+      { path: 'supply-list', component: SupplyListComponent},
+      { path: 'create-supply', component: CreateSupplyComponent},
+      { path: 'supply-info', component: SupplyInfoComponent},
+      { path: 'edit-supply', component: EditSupplyComponent},
+      { path: 'supply-choise', component: SupplyChoiseComponent},
+      { path: 'supply-choise-info', component: SupplyChoiseInfoComponent},
       { path: 'orders', component: ChoiseTabComponent },
       { path: 'profile-info', component: ProfileInfoComponent },
       { path: 'user-list', component: UserListComponent },

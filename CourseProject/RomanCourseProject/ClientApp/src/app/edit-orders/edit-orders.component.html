@@ -52,7 +52,25 @@
         </div>
         <div class="input-form">
             <div class="form-block">
-                <h1>Количество деталей:</h1>
+                <h1>Изменить поставку:</h1>
+            </div>
+            <div class="form-block">
+                <button class="second-variation-bar" (click)="supplyClick()">
+                    <h1>Выбрать</h1> 
+                </button>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Номер посавки:</h1>
+            </div>
+            <div class="form-block">
+                <h1>{{supplyId}}</h1>
+            </div>
+        </div>
+        <div class="input-form">
+            <div class="form-block">
+                <h1>Количество товара:</h1>
             </div>
             <div class="form-block">
                 <input [(ngModel)]="delivery.count" class="auth-input" type="number" placeholder="Введите количество">

@@ -15,6 +15,7 @@ export class CreateCustomerComponent implements OnInit {
   name: string | undefined;
   address: string | undefined;
   phone: string | undefined;
+  contacts: string | undefined;
   private targetRoute: string = '/provider-list';
   public user: User = new User(0, '', '', '', '');
 
@@ -36,7 +37,12 @@ export class CreateCustomerComponent implements OnInit {
       this.phone = '';
       return;
     }
-    var provider = new CreateCustomerDto(this.name, this.address, this.phone);
+    if (this.contacts == null || this.contacts.trim() == '') {
+      alert("Введите контакты поставщика");
+      this.contacts = '';
+      return;
+    }
+    var provider = new CreateCustomerDto(this.name, this.address, this.phone, this.contacts);
     this.providerService.createProvider(provider).subscribe(x => console.log(x));
     this.router.navigateByUrl(this.targetRoute);
   }

@@ -16,12 +16,12 @@ namespace RomanCourseProject.Services
             _deliveryRepository = deliveryRepository;
         }
 
-        public async Task<bool> Create(Delivery delivery)
+        public bool Create(Delivery delivery)
         {
             try
             {
                 if (delivery != null)
-                    await _deliveryRepository.Create(delivery);
+                    _deliveryRepository.Create(delivery);
                 return true;
             }
             catch
@@ -30,11 +30,11 @@ namespace RomanCourseProject.Services
             }
         }
 
-        public async Task<bool> Delete(int id)
+        public bool Delete(int id)
         {
             try
             {
-                await _deliveryRepository.Delete(id);
+                _deliveryRepository.Delete(id);
                 return true;
             }
             catch
@@ -43,11 +43,11 @@ namespace RomanCourseProject.Services
             }
         }
 
-        public async Task<List<Delivery>> GetAll()
+        public List<Delivery> GetAll()
         {
             try
             {
-                return await _deliveryRepository.GetAll();
+                return _deliveryRepository.GetAll();
             }
             catch
             {
@@ -55,11 +55,11 @@ namespace RomanCourseProject.Services
             }
         }
 
-        public async Task<Delivery> GetById(int id)
+        public Delivery GetById(int id)
         {
             try
             {
-                return await _deliveryRepository.GetById(id);
+                return _deliveryRepository.GetById(id);
             }
             catch
             {
@@ -67,11 +67,11 @@ namespace RomanCourseProject.Services
             }
         }
 
-        public async Task<List<Delivery>> GetByPrice(int price)
+        public List<Delivery> GetByPrice(int price)
         {
             try
             {
-                return await _deliveryRepository.GetByPrice(price);
+                return _deliveryRepository.GetByPrice(price);
             }
             catch
             {
@@ -79,11 +79,11 @@ namespace RomanCourseProject.Services
             }
         }
 
-        public async Task<bool> Update(Delivery delivery)
+        public bool Update(Delivery delivery)
         {
             try
             {
-                await _deliveryRepository.Update(delivery);
+                _deliveryRepository.Update(delivery);
                 return true;
             }
             catch

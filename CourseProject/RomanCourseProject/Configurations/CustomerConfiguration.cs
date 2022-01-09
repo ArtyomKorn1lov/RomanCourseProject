@@ -21,7 +21,7 @@ namespace RomanCourseProject.Configurations
             builder.Property(p => p.Phone).IsRequired();
             builder.Property(p => p.Contacts).IsRequired();
 
-            builder.HasMany(p => p.Orders).WithOne().HasForeignKey(i => i.ProductId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasMany(p => p.Orders).WithOne().HasForeignKey(i => i.CustomerId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

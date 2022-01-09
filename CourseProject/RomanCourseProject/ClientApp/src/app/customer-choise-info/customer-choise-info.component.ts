@@ -9,7 +9,7 @@ import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-customer-choise-info',
   templateUrl: './customer-choise-info.component.html',
-  styleUrls: ['./customer-choise-infocustomer-choise-info.component.css']
+  styleUrls: ['./customer-choise-info.component.css']
 })
 export class CustomerChoiseInfoComponent implements OnInit {
 

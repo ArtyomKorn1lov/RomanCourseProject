@@ -9,7 +9,7 @@ import { CreateCustomerDto } from '../dto/CreateCustomerDto';
 })
 export class CustomerService {
 
-  private commonUrl: string = 'api/provider';
+  private commonUrl: string = 'api/customer';
   private id: number = 0;
 
   constructor(private http: HttpClient) { }

@@ -25,19 +25,9 @@ export class EditProductComponent implements OnInit {
       this.detail.name = '';
       return;
     }
-    if (this.detail.articleNumber == null) {
-      alert("Введите артикль");
-      this.detail.articleNumber = 0;
-      return;
-    }
     if (this.detail.price == null || this.detail.price == 0) {
       alert("Введите цену");
       this.detail.price = 1;
-      return;
-    }
-    if (this.detail.articleNumber >= 2000000000) {
-      alert("Слишком большое число для артикля");
-      this.detail.articleNumber = 0;
       return;
     }
     if (this.detail.price >= 2000000000) {
@@ -50,10 +40,10 @@ export class EditProductComponent implements OnInit {
   }
 
   deleteDetail(id: number): void {
-    if (confirm("Вы уверены, что хотите удалить данную деталь?")) {
+    if (confirm("Вы уверены, что хотите удалить данный товар?")) {
       this.deliveryService.checkByDetailId(id).subscribe(data => {
         if (data != null) {
-          alert("Удаление невозможно, данная деталь уже используется в поставке");
+          alert("Удаление невозможно, данный товар уже используется в заказе");
           return;
         }
         this.detailService.deleteDetail(id).subscribe(x => console.log(x));
